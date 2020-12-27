@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>Repository.MySqlConnectionFactory</RootNamespace>
+    <PackageId>Fuli.Repository.MySqlConnectionFactory</PackageId>
+    <Version>1.0.6</Version>
+    <Authors>Fuli</Authors>
+    <Copyright>Copyright 2021</Copyright>
+    <PackageProjectUrl>https://github.com/fuli1001-cmd/Repository</PackageProjectUrl>
+    <PackageTags>Repository UOW DomainEvent</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="1.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ConnectionFactory\Repository.ConnectionFactory.csproj" />
+  </ItemGroup>
+
+</Project>

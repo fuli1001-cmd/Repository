@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  repositorysample:
+    image: fuli1001/repository-sample:latest
+    build:
+      context: .
+      dockerfile: Sample/Dockerfile

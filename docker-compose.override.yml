@@ -1,0 +1,6 @@
+version: '3.4'
+services:
+  repositorysample:
+    environment:
+      - ConnectionStrings__OrderConnection=Server=47.114.40.140;Database=ordertest;User Id=photo;Password=HAL9000C*mputer;
+      - ConnectionStrings__IntegrationConnection=Server=mariadb.k8s-dev-basic.smartxcloud.cn;Port=1306;Database=integration;Uid=developer;Pwd=@2020%;

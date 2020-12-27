@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+	  <PackageTags>Repository UOW DomainEvent</PackageTags>
+	  <Copyright>Copyright 2021</Copyright>
+	  <Authors>Fuli</Authors>
+	  <Description>Repository.Dapper extensions for .NET Core.</Description>
+	  <PackageId>Fuli.Repository.Dapper.Extensions.DependencyInjection</PackageId>
+	  <Version>1.0.6</Version>
+	  <PackageReleaseNotes></PackageReleaseNotes>
+	  <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	  <PackageProjectUrl>https://github.com/fuli1001-cmd/Repository</PackageProjectUrl>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Repository.Dapper\Repository.Dapper.csproj" />
+    <ProjectReference Include="..\Repository.Extensions.DependencyInjection\Repository.Extensions.DependencyInjection.csproj" />
+  </ItemGroup>
+
+</Project>
