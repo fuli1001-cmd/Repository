@@ -14,17 +14,12 @@ dotnet add package Fuli.Repository.EFCore
 
 ## Usage
 
-1. Add repository service to IoC comtainer.
+1. Use AspectCore as the IOC container (The library uses AspectCore for UOW).
 
     ```c#
-    public void ConfigureServices(IServiceCollection services)
-    {
-        // Dapper
-        services.ConfigureDapperRepository();
-
-        // Or use EFCore
-        services.ConfigureRepository();
-    }
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .UseServiceProviderFactory(new DynamicProxyServiceProviderFactory());
     ```
 
 2. Define your db context.
@@ -97,9 +92,11 @@ dotnet add package Fuli.Repository.EFCore
     public void ConfigureServices(IServiceCollection services)
     {
         // Dapper
+        services.ConfigureDapperRepository();
         services.AddScoped(sp => ActivatorUtilities.CreateInstance<MealContext>(sp, new SqlServerDbConnectionFactory(configuration.GetConnectionString("MealConnection"))));
 
         // Or use EFCore
+        services.ConfigureRepository();
         services.AddDbContext<MealContext>(options =>
         {
             // use SqlServer, or use MySql / MariaDb with UseMySql
